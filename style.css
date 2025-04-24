@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+}
+
+h2 {
+    text-align: center;
+    color: #f35c7a;
+    border-top: 3px solid #3ba9fc;
+    border-bottom: 3px solid #3ba9fc;
+    padding: 10px 0;
+}
+
+.box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.box.active {
+    border-color: #f35c7a;
+    background-color: #fff5f7;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.discount-tag {
+    background-color: #f35c7a;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+.options {
+    margin-top: 10px;
+    display: none;
+}
+
+.box.active .options {
+    display: block;
+}
+
+.options select {
+    margin: 5px;
+    padding: 4px;
+}
+
+.most-popular {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #f35c7a;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #f35c7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
