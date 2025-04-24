@@ -1,0 +1,104 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Boxes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>YAY! It’s BOGO</h2>
+
+    <div class="box" onclick="toggleBox(this)">
+        <div class="radio-label">
+            <input type="radio" name="unit" />
+            <div>1 Unit <span class="discount-tag">10% Off</span></div>
+        </div>
+        <div class="price">$10.00 USD <span class="old-price">$24.00 USD</span></div>
+        <div class="options">
+            <div>
+                #1: <select>
+                    <option>S</option>
+                </select>
+                <select>
+                    <option>Black</option>
+                </select>
+            </div>
+            <div>
+                #2: <select>
+                    <option>S</option>
+                </select>
+                <select>
+                    <option>Colour</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" onclick="toggleBox(this)">
+        <div class="most-popular">MOST POPULAR</div>
+        <div class="radio-label">
+            <input type="radio" name="unit" />
+            <div>2 Unit <span class="discount-tag">20% Off</span></div>
+        </div>
+        <div class="price">$18.00 USD <span class="old-price">$24.00 USD</span></div>
+        <div class="options">
+            <div>
+                #1: <select>
+                    <option>S</option>
+                </select>
+                <select>
+                    <option>Black</option>
+                </select>
+            </div>
+            <div>
+                #2: <select>
+                    <option>S</option>
+                </select>
+                <select>
+                    <option>Colour</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" onclick="toggleBox(this)">
+        <div class="radio-label">
+            <input type="radio" name="unit" />
+            <div>3 Unit <span class="discount-tag">30% Off</span></div>
+        </div>
+        <div class="price">$24.00 USD <span class="old-price">$24.00 USD</span></div>
+        <div class="options">
+            <div>
+                #1: <select>
+                    <option>S</option>
+                </select>
+                <select>
+                    <option>Black</option>
+                </select>
+            </div>
+            <div>
+                #2: <select>
+                    <option>S</option>
+                </select>
+                <select>
+                    <option>Colour</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="color: #f35c7a;">Free Delivery</div>
+        <div>Total : $18.00 USD</div>
+    </div>
+
+    <button class="add-to-cart">+ Add to Cart</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
