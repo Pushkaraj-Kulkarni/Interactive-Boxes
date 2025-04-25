@@ -1,104 +1,192 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Boxes</title>
-    <link rel="stylesheet" href="../FrontEnd Support/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Boxes</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fff;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #f35c7a;
+      border-top: 2px solid #009ddc;
+      border-bottom: 2px solid #009ddc;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .box.expanded {
+      border: 2px solid #f35c7a;
+      background-color: #fff0f5;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .discount-tag {
+      background-color: #f35c7a;
+      color: #fff;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .most-popular {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #f35c7a;
+      color: white;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .box.expanded .options {
+      display: block;
+    }
+
+    select {
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .footer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+
+    .add-to-cart {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #f35c7a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
-    <h2>YAY! It’s BOGO</h2>
 
-    <div class="box" onclick="toggleBox(this)">
-        <div class="radio-label">
-            <input type="radio" name="unit" />
-            <div>1 Unit <span class="discount-tag">10% Off</span></div>
-        </div>
-        <div class="price">$10.00 USD <span class="old-price">$24.00 USD</span></div>
-        <div class="options">
-            <div>
-                #1: <select>
-                    <option>S</option>
-                </select>
-                <select>
-                    <option>Black</option>
-                </select>
-            </div>
-            <div>
-                #2: <select>
-                    <option>S</option>
-                </select>
-                <select>
-                    <option>Colour</option>
-                </select>
-            </div>
-        </div>
+  <h2>YAY! It’s BOGO</h2>
+
+  <div class="box" onclick="toggleBox(this)">
+    <div class="radio-label">
+      <input type="radio" name="unit" />
+      <div>1 Unit <span class="discount-tag">10% Off</span></div>
     </div>
-
-    <div class="box" onclick="toggleBox(this)">
-        <div class="most-popular">MOST POPULAR</div>
-        <div class="radio-label">
-            <input type="radio" name="unit" />
-            <div>2 Unit <span class="discount-tag">20% Off</span></div>
-        </div>
-        <div class="price">$18.00 USD <span class="old-price">$24.00 USD</span></div>
-        <div class="options">
-            <div>
-                #1: <select>
-                    <option>S</option>
-                </select>
-                <select>
-                    <option>Black</option>
-                </select>
-            </div>
-            <div>
-                #2: <select>
-                    <option>S</option>
-                </select>
-                <select>
-                    <option>Colour</option>
-                </select>
-            </div>
-        </div>
+    <div class="price">$10.00 USD <span class="old-price">$24.00 USD</span></div>
+    <div class="options">
+      <div>
+        #1: <select><option>S</option></select>
+        <select><option>Black</option></select>
+      </div>
     </div>
+  </div>
 
-    <div class="box" onclick="toggleBox(this)">
-        <div class="radio-label">
-            <input type="radio" name="unit" />
-            <div>3 Unit <span class="discount-tag">30% Off</span></div>
-        </div>
-        <div class="price">$24.00 USD <span class="old-price">$24.00 USD</span></div>
-        <div class="options">
-            <div>
-                #1: <select>
-                    <option>S</option>
-                </select>
-                <select>
-                    <option>Black</option>
-                </select>
-            </div>
-            <div>
-                #2: <select>
-                    <option>S</option>
-                </select>
-                <select>
-                    <option>Colour</option>
-                </select>
-            </div>
-        </div>
+  <div class="box" onclick="toggleBox(this)">
+    <div class="most-popular">MOST POPULAR</div>
+    <div class="radio-label">
+      <input type="radio" name="unit" />
+      <div>2 Unit <span class="discount-tag">20% Off</span></div>
     </div>
-
-    <div class="footer">
-        <div style="color: #f35c7a;">Free Delivery</div>
-        <div>Total : $18.00 USD</div>
+    <div class="price">$18.00 USD <span class="old-price">$24.00 USD</span></div>
+    <div class="options">
+      <div>
+        #1: <select><option>S</option></select>
+        <select><option>Black</option></select>
+      </div>
+      <div>
+        #2: <select><option>S</option></select>
+        <select><option>Colour</option></select>
+      </div>
     </div>
+  </div>
 
-    <button class="add-to-cart">+ Add to Cart</button>
+  <div class="box" onclick="toggleBox(this)">
+    <div class="radio-label">
+      <input type="radio" name="unit" />
+      <div>3 Unit <span class="discount-tag">30% Off</span></div>
+    </div>
+    <div class="price">$24.00 USD <span class="old-price">$24.00 USD</span></div>
+    <div class="options">
+      <div>
+        #1: <select><option>S</option></select>
+        <select><option>Black</option></select>
+      </div>
+      <div>
+        #2: <select><option>S</option></select>
+        <select><option>Colour</option></select>
+      </div>
+      <div>
+        #3: <select><option>S</option></select>
+        <select><option>Colour</option></select>
+      </div>
+    </div>
+  </div>
 
-    <script src="../FrontEnd Support/script.js"></script>
+  <div class="footer">
+    <div style="color: #f35c7a;">Free Delivery</div>
+    <div>Total : $18.00 USD</div>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+
+  <script>
+    function toggleBox(clickedBox) {
+      const allBoxes = document.querySelectorAll('.box');
+      allBoxes.forEach(box => {
+        if (box !== clickedBox) {
+          box.classList.remove('expanded');
+        }
+      });
+      clickedBox.classList.toggle('expanded');
+    }
+  </script>
+
 </body>
-
 </html>
